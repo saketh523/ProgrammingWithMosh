@@ -1,13 +1,27 @@
-#GuessingGame
-secret_number = 9
-loop_count = 0
-target_count = 3
+#CarGame
 
-while loop_count < target_count:
-  guess_number = int(input('Guess: '))
-  loop_count+=1
-  if(guess_number == secret_number):
-    print('Yay! You guessed it right')
-    break
-else:
-  print("Oops, you couldn't guess the number")
+input_value = ""
+started = False
+stopped = False
+while input_value.lower() != 'quit':
+  input_value = input("> ")
+  if input_value.lower() == 'help':
+    print('start - to start the car')
+    print('stop - to stop the car')
+    print('quit - to exit')
+  elif input_value.lower() == 'start':
+    if started:
+      print('Car already started')
+    else:
+      started = True
+      print('Car started... Ready to go!')
+  elif input_value.lower() == 'stop':
+    if stopped:
+      print('Car already stopped')
+    else:
+      stopped = True
+      print('Car stopped')
+  elif input_value.lower() == 'quit':
+    break  
+  else:
+    print("I don't understand")
